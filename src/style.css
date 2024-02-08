@@ -95,7 +95,7 @@ button:focus-visible {
   }
 }
 
-.game-board {
+game-board {
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(3, auto);

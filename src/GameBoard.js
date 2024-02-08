@@ -17,11 +17,17 @@ export class GameBoard extends HTMLElement {
     /** @type {'X' | 'O'} */
     this.role = null;
 
-    /** @type {Array<Array<CellState>>} */
+    /** @type {Array<CellState>} */
     this.gameState = [
-      [makeCell(), makeCell(), makeCell()],
-      [makeCell(), makeCell(), makeCell()],
-      [makeCell(), makeCell(), makeCell()],
+      makeCell(),
+      makeCell(),
+      makeCell(),
+      makeCell(),
+      makeCell(),
+      makeCell(),
+      makeCell(),
+      makeCell(),
+      makeCell(),
     ];
   }
 
@@ -33,24 +39,26 @@ export class GameBoard extends HTMLElement {
   }
 
   render() {
-    this.innerHTML =
-      '<div class="game-board">' +
-      this.gameState
-        .map((row) =>
-          row
-            .map((cell) => {
-              return `<span>${
-                cell.visibleTo.has(this.role) ? cell.piece : "?"
-              }</span>`;
-            })
-            .join("")
-        )
-        .join("") +
-      `</div>`;
+    this.innerHTML = this.gameState
+      .map(
+        (cell, cellIndex) =>
+          `<button data-cell-id="${cellIndex}">${
+            cell.visibleTo.has(this.role) ? cell.piece : "?"
+          }</button>`
+      )
+      .join("");
   }
 
   // connect component
   connectedCallback() {
     this.render();
+
+    this.addEventListener("click", (event) => {
+      if (!(event.target instanceof HTMLButtonElement)) {
+        return;
+      }
+      const cellIndex = event.target.getAttribute("data-cell-id");
+      console.log(cellIndex);
+    });
   }
 }
