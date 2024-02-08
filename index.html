@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kriegsspiel Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="./src/style.css"/>
 </head>
 <body>
   <header><h1>Kriegsspiel Tic-Tac-Toe</h1>
@@ -15,6 +16,14 @@
     </ol>
   </header>
   <main>
+    <form id="game-id">
+      <label for="game-id-input">Game ID</label>
+      <input id="game-id-input" type="text" name="game-id" placeholder="Any alphanumeric string" autocomplete="off">
+      <p>Choose your piece</p>
+      <label>X<input type="radio" name="role" value="X" ></label>
+      <label>O<input type="radio" name="role" value="O" ></label>
+      <button>Play!</button>
+    </form>
     <tic-tac-toe></tic-tac-toe>
   </main>
   <footer>A game inspired by <a href="https://www.smbc-comics.com/">Zach Weinersmith's</a> <a href="https://mastodon.social/@ZachWeinersmith/111890121393299096">Mastadon post</a>.

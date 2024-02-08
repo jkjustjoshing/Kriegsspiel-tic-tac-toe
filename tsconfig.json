@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
+    "module": "commonjs",
+    "checkJs": true,
+    "noEmit": true
+  },
+  "include": ["./src"]
+}

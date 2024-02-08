@@ -94,3 +94,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto);
+}
